@@ -1,0 +1,14 @@
+D:\progProj\osu!Export\osu!Export\bin\Release\osu!Export.exe.config
+D:\progProj\osu!Export\osu!Export\bin\Release\osu!Export.exe
+D:\progProj\osu!Export\osu!Export\bin\Release\osu!Export.pdb
+D:\progProj\osu!Export\osu!Export\obj\Release\osu!Export.csprojResolveAssemblyReference.cache
+D:\progProj\osu!Export\osu!Export\obj\Release\MainWindow.g.cs
+D:\progProj\osu!Export\osu!Export\obj\Release\App.g.cs
+D:\progProj\osu!Export\osu!Export\obj\Release\osu!Export_MarkupCompile.cache
+D:\progProj\osu!Export\osu!Export\obj\Release\osu!Export_MarkupCompile.lref
+D:\progProj\osu!Export\osu!Export\obj\Release\MainWindow.baml
+D:\progProj\osu!Export\osu!Export\obj\Release\osu!Export.g.resources
+D:\progProj\osu!Export\osu!Export\obj\Release\osu_Export.Properties.Resources.resources
+D:\progProj\osu!Export\osu!Export\obj\Release\osu!Export.csproj.GenerateResource.Cache
+D:\progProj\osu!Export\osu!Export\obj\Release\osu!Export.exe
+D:\progProj\osu!Export\osu!Export\obj\Release\osu!Export.pdb

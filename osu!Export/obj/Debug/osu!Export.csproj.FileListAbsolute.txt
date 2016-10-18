@@ -1,0 +1,17 @@
+D:\progProj\osu!Export\osu!Export\bin\Debug\osu!Export.exe.config
+D:\progProj\osu!Export\osu!Export\bin\Debug\osu!Export.exe
+D:\progProj\osu!Export\osu!Export\bin\Debug\osu!Export.pdb
+D:\progProj\osu!Export\osu!Export\obj\Debug\osu!Export.csprojResolveAssemblyReference.cache
+D:\progProj\osu!Export\osu!Export\obj\Debug\MainWindow.g.cs
+D:\progProj\osu!Export\osu!Export\obj\Debug\App.g.cs
+D:\progProj\osu!Export\osu!Export\obj\Debug\osu!Export_MarkupCompile.cache
+D:\progProj\osu!Export\osu!Export\obj\Debug\osu!Export_MarkupCompile.lref
+D:\progProj\osu!Export\osu!Export\obj\Debug\MainWindow.baml
+D:\progProj\osu!Export\osu!Export\obj\Debug\osu!Export.g.resources
+D:\progProj\osu!Export\osu!Export\obj\Debug\osu_Export.Properties.Resources.resources
+D:\progProj\osu!Export\osu!Export\obj\Debug\osu!Export.csproj.GenerateResource.Cache
+D:\progProj\osu!Export\osu!Export\obj\Debug\osu!Export.exe
+D:\progProj\osu!Export\osu!Export\obj\Debug\osu!Export.pdb
+D:\progProj\osu!Export\osu!Export\bin\Debug\policy.2.0.taglib-sharp.dll
+D:\progProj\osu!Export\osu!Export\bin\Debug\taglib-sharp.dll
+D:\progProj\osu!Export\osu!Export\bin\Debug\policy.2.0.taglib-sharp.config
