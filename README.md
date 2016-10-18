@@ -5,3 +5,5 @@ It is currently in development hell, I have to clean up code, add features, etc.
 It's working, but probably not for the end user.
 
 It is written in C# and the compiled binaries are in osu!Export/bin/Debug
+
+You'll need osu!Export.exe and the bck.png file which you can replace with your own album art.
