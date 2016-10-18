@@ -1,0 +1,25 @@
+System.Collections.ListDictionaryInternal
+
+-2147024894
+
+Could not find file 'D:\New folder (2)\osuExport\osu!Export\bin\Debug\bck.png'.
+mscorlib
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at TagLib.File.LocalFileAbstraction.get_ReadStream()
+   at TagLib.ByteVector.FromFile(IFileAbstraction abstraction, Byte[]& firstChunk, Boolean copyFirstChunk)
+   at TagLib.ByteVector.FromPath(String path, Byte[]& firstChunk, Boolean copyFirstChunk)
+   at TagLib.Picture..ctor(String path)
+   at osu_Export.MainWindow.<ExportSongs>d__2.MoveNext() in D:\New folder (2)\osuExport\osu!Export\MainWindow.xaml.cs:line 100
+Void WinIOError(Int32, System.String)
+System.IO.FileNotFoundException: Could not find file 'D:\New folder (2)\osuExport\osu!Export\bin\Debug\bck.png'.
+File name: 'D:\New folder (2)\osuExport\osu!Export\bin\Debug\bck.png'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at TagLib.File.LocalFileAbstraction.get_ReadStream()
+   at TagLib.ByteVector.FromFile(IFileAbstraction abstraction, Byte[]& firstChunk, Boolean copyFirstChunk)
+   at TagLib.ByteVector.FromPath(String path, Byte[]& firstChunk, Boolean copyFirstChunk)
+   at TagLib.Picture..ctor(String path)
+   at osu_Export.MainWindow.<ExportSongs>d__2.MoveNext() in D:\New folder (2)\osuExport\osu!Export\MainWindow.xaml.cs:line 100

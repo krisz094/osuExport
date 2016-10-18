@@ -91,11 +91,14 @@ namespace osu_Export
                     if (success)
                     {
                         TagLib.File f = TagLib.File.Create(VM.Destination + "\\" + newFullTitle + ".mp3");
+                        
                         f.Tag.Album = "Osu Exported";
                         f.Tag.AlbumArtists = new string[] { "osu!Export" };
                         f.Tag.Performers = new string[] { file.Artist };
                         f.Tag.Title = file.Title;
                         f.Tag.Track = 0;
+                        f.Tag.TrackCount = 0;
+                        
                         TagLib.IPicture newArt = new TagLib.Picture("bck.png");
                         f.Tag.Pictures = new TagLib.IPicture[1] { newArt };
                         f.Save();

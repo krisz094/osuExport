@@ -56,25 +56,54 @@ namespace osu_Export
             get { return consoleBox; }
         }
         static ViewModel peldany;
+        void InitializeDir()
+        {
+            Destination = Path.Combine(Directory.GetLogicalDrives().First(), "osu!Export");
+            try
+            {
+                Source = tryGetSource();
+                ConsoleAdd("osu! folder found automatically at " + Source);
+
+                try
+                {
+                    FileList = OsuSong.ParseAll(Source);
+                }
+                catch (Exception e)
+                {
+                    ConsoleAdd(e.Message);
+                }
+
+                StreamWriter sw = new StreamWriter("path.dat", false, Encoding.Unicode);
+                sw.Write(Source + "?" + Destination);
+                sw.Close();
+            }
+            catch (NoOsuFoundException)
+            {
+                BrowseForSource();
+            }
+        }
         private ViewModel()
         {
             FilteredList = new ObservableCollection<OsuSong>();
             consoleBox = new ObservableCollection<string>();
 
-                //TODO: clean this shit up, especially: if path.dat exists but it's bullshit then try to get the actual osu! directory
+            //TODO: clean this shit up, especially: if path.dat exists but it's bullshit then try to get the actual osu! directory
 
-                //get source+destination
-                //if file exists, import from it
-                //it it doesn't, try to get default osu! folder
-                //if all else fails, make the user browse
-                //if no valid folder found, put message
+            //get source+destination
+            //if file exists, import from it
+            //it it doesn't, try to get default osu! folder
+            //if all else fails, make the user browse
+            //if no valid folder found, put message
 
 
-                if (File.Exists("path.dat"))
+            if (File.Exists("path.dat"))
+            {
+                string[] paths = File.ReadAllText("path.dat", Encoding.Unicode).Split('?');
+
+                Source = paths[0];
+                Destination = paths[1];
+                if (Directory.Exists(Source))
                 {
-                    string[] paths = File.ReadAllText("path.dat",Encoding.Unicode).Split('?');
-
-                    Source = paths[0];
                     ConsoleAdd("osu! folder found in cache");
 
                     try
@@ -86,43 +115,25 @@ namespace osu_Export
                         ConsoleAdd(e.Message);
 
                     }
-                    Destination = paths[1];
 
                 }
                 else
                 {
-                    
-                    Destination = Directory.GetLogicalDrives().First() + "osu!Export";
-                    try
-                    {
-                        Source = tryGetSource();
-                        ConsoleAdd("osu! folder found automatically at " + Source);
-
-                        try
-                        {
-                            FileList = OsuSong.ParseAll(Source);
-                        }
-                        catch (Exception e)
-                        {
-                            ConsoleAdd(e.Message);
-                        }
-
-                        StreamWriter sw = new StreamWriter("path.dat",false,Encoding.Unicode);
-                        sw.Write(Source + "?" + Destination);
-                        sw.Close();
-                    }
-                    catch (NoOsuFoundException)
-                    {
-                        BrowseForSource();
-                    }
-
+                    InitializeDir();
                 }
-                FilteredList.Clear();
-                foreach (OsuSong file in FileList)
-                {
-                    FilteredList.Add(file);
-                }
-            
+
+
+            }
+            else
+            {
+                InitializeDir();
+            }
+            FilteredList.Clear();
+            foreach (OsuSong file in FileList)
+            {
+                FilteredList.Add(file);
+            }
+
 
         }
         public void BrowseForSource()
@@ -187,20 +198,30 @@ namespace osu_Export
         public List<OsuSong> FileList
         {
             get { return fileList; }
-            set { fileList = value; OnPropertyChanged(); }
+            set
+            {
+                if (fileList == null)
+                {
+                    fileList = new List<OsuSong>();
+                }
+                fileList = value;
+                OnPropertyChanged();
+
+
+            }
         }
         public ObservableCollection<OsuSong> FilteredList
         {
             get; set;
         }
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
         void OnPropertyChanged([CallerMemberName]string nev = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(nev));
         }
-       public  void ConsoleAdd(string message)
+        public void ConsoleAdd(string message)
         {
             ConsoleBox.Insert(0, DateTime.Now.ToShortTimeString() + " | " + message);
         }
@@ -243,7 +264,7 @@ namespace osu_Export
             string mp3 = currLine.Substring("AudioFilename: ".Length);
             while (!currLine.StartsWith("Title:"))
                 currLine = sr.ReadLine();
-            string title= currLine.Substring("Title:".Length);
+            string title = currLine.Substring("Title:".Length);
             while (!currLine.StartsWith("Artist:"))
                 currLine = sr.ReadLine();
             string artist = currLine.Substring("Artist:".Length);
